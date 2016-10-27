@@ -6,3 +6,6 @@ After a long span of product management and entrepreunrship I decided to dust of
  * Custom ListView renderer 
  * iOS InputAccessoryView 
  * Xamarin Forms Behaviors 
+
+
+![alt text](https://github.com/bbkillen/ChatListView/blob/master/example1.png"Logo Title Text 1")
