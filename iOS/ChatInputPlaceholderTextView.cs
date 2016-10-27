@@ -11,18 +11,16 @@ namespace ChatListView.iOS.Controls
 			Placeholder = string.Empty;
 		}
 
-		public ChatInputPlaceholderTextView(UIButton SendButton)
+		public ChatInputPlaceholderTextView()
 			: base()
 		{
 			Placeholder = string.Empty;
-			_sendButton = SendButton;
 		}
 
 		public string Placeholder { get; set; }
 
 		private UILabel PlaceholderLabel { get; set; }
 
-		private UIButton _sendButton;
 
 		public override void LayoutSubviews()
 		{
@@ -37,14 +35,10 @@ namespace ChatListView.iOS.Controls
 				PlaceholderLabel.Text = Placeholder;
 
 				AddSubview(PlaceholderLabel);
-				AddSubview(_sendButton);
 
 				AddConstraint(NSLayoutConstraint.Create(PlaceholderLabel, NSLayoutAttribute.CenterY,  NSLayoutRelation.Equal, this, NSLayoutAttribute.CenterY,  1,  0));
 				AddConstraint(NSLayoutConstraint.Create(PlaceholderLabel, NSLayoutAttribute.Leading,  NSLayoutRelation.Equal, this, NSLayoutAttribute.Leading,  1, 10));
 				AddConstraint(NSLayoutConstraint.Create(PlaceholderLabel, NSLayoutAttribute.Trailing, NSLayoutRelation.Equal, this, NSLayoutAttribute.Trailing, 1,  0));
-
-				AddConstraint(NSLayoutConstraint.Create(_sendButton, NSLayoutAttribute.CenterY, NSLayoutRelation.Equal, this, NSLayoutAttribute.CenterY, 1, 0));
-				AddConstraint(NSLayoutConstraint.Create(_sendButton, NSLayoutAttribute.CenterX, NSLayoutRelation.Equal, this, NSLayoutAttribute.CenterX, 2, -16));
 
 				Changed += (sender, e) =>
 				{

@@ -172,8 +172,8 @@ namespace ChatListView.iOS
 
 			internal void SetupConstraints(UIView parent)
 			{
-				parent.AddConstraint(NSLayoutConstraint.Create(this, NSLayoutAttribute.Leading, NSLayoutRelation.Equal, parent, NSLayoutAttribute.Leading, 1, 0));
-				parent.AddConstraint(NSLayoutConstraint.Create(this, NSLayoutAttribute.Bottom, NSLayoutRelation.Equal, parent, NSLayoutAttribute.Bottom, 1, 0));
+				parent.AddConstraint(NSLayoutConstraint.Create(this, NSLayoutAttribute.Leading,  NSLayoutRelation.Equal, parent, NSLayoutAttribute.Leading, 1, 0));
+				parent.AddConstraint(NSLayoutConstraint.Create(this, NSLayoutAttribute.Bottom,   NSLayoutRelation.Equal, parent, NSLayoutAttribute.Bottom, 1, 0));
 				parent.AddConstraint(NSLayoutConstraint.Create(this, NSLayoutAttribute.Trailing, NSLayoutRelation.Equal, parent, NSLayoutAttribute.Trailing, 1, 0));
 
 				HeightConstraint = NSLayoutConstraint.Create(this, NSLayoutAttribute.Height, NSLayoutRelation.Equal, null, NSLayoutAttribute.NoAttribute, 1, StartingHeight);
@@ -186,13 +186,9 @@ namespace ChatListView.iOS
 				SendButton = new UIButton();
 				SendButton.SetImage(UIImage.FromBundle("t_send"), UIControlState.Normal);
 				SendButton.TranslatesAutoresizingMaskIntoConstraints = false;
-				//SendButton.SetTitle("Send", UIControlState.Normal);
 				SendButton.Enabled = false;
-				//SendButton.Font = UIFont.BoldSystemFontOfSize(16);
-				//SendButton.SetTitleColor(UIKit.UIColor.DarkTextColor, UIControlState.Normal);
-				//SendButton.SetTitleColor(UIKit.UIColor.LightGray, UIControlState.Disabled);
 
-				TextInputView = new ChatInputPlaceholderTextView(SendButton);
+				TextInputView = new ChatInputPlaceholderTextView();
 				TextInputView.TranslatesAutoresizingMaskIntoConstraints = false;
 				TextInputView.Font = UIFont.SystemFontOfSize(14);
 				TextInputView.ClipsToBounds = true;
@@ -205,6 +201,7 @@ namespace ChatListView.iOS
 
 				var insets = TextInputView.TextContainerInset;
 				insets.Left += 4;
+				insets.Right += 24;
 				TextInputView.TextContainerInset = insets;
 
 				SeparatorLine = new UIView();
@@ -213,18 +210,19 @@ namespace ChatListView.iOS
 
 				AddSubview(UploadButton);
 				AddSubview(TextInputView);
-				//AddSubview(SendButton);
 				AddSubview(SeparatorLine);
+				AddSubview(SendButton);
 
-				AddConstraint(NSLayoutConstraint.Create(UploadButton, NSLayoutAttribute.Leading, NSLayoutRelation.Equal, this, NSLayoutAttribute.Leading, 1, 9));
-				AddConstraint(NSLayoutConstraint.Create(UploadButton, NSLayoutAttribute.Bottom, NSLayoutRelation.Equal, this, NSLayoutAttribute.Bottom, 1, -9));
-				AddConstraint(NSLayoutConstraint.Create(UploadButton, NSLayoutAttribute.Trailing, NSLayoutRelation.Equal, TextInputView, NSLayoutAttribute.Leading, 1, -8));
-				//UploadButton.AddConstraint(NSLayoutConstraint.Create(UploadButton, NSLayoutAttribute.Height, NSLayoutRelation.Equal, null, NSLayoutAttribute.NoAttribute, 1, 24));
-				//UploadButton.AddConstraint(NSLayoutConstraint.Create(UploadButton, NSLayoutAttribute.Width, NSLayoutRelation.Equal, null, NSLayoutAttribute.NoAttribute, 1, 24));
+				AddConstraint(NSLayoutConstraint.Create(UploadButton, NSLayoutAttribute.Leading,   NSLayoutRelation.Equal, this, NSLayoutAttribute.Leading, 1, 9));
+				AddConstraint(NSLayoutConstraint.Create(UploadButton, NSLayoutAttribute.CenterY,   NSLayoutRelation.Equal, this, NSLayoutAttribute.CenterY, 1, 0));
+				AddConstraint(NSLayoutConstraint.Create(UploadButton, NSLayoutAttribute.Trailing,  NSLayoutRelation.Equal, TextInputView, NSLayoutAttribute.Leading, 1, -8));
 
-				AddConstraint(NSLayoutConstraint.Create(TextInputView, NSLayoutAttribute.Top, NSLayoutRelation.Equal, this, NSLayoutAttribute.Top, 1, 6));
-				AddConstraint(NSLayoutConstraint.Create(TextInputView, NSLayoutAttribute.Bottom, NSLayoutRelation.Equal, this, NSLayoutAttribute.Bottom, 1, -5));
-				AddConstraint(NSLayoutConstraint.Create(TextInputView, NSLayoutAttribute.Trailing, NSLayoutRelation.Equal, this, NSLayoutAttribute.Trailing, 1, -5));
+				AddConstraint(NSLayoutConstraint.Create(TextInputView, NSLayoutAttribute.Top,      NSLayoutRelation.Equal, this, NSLayoutAttribute.Top,      1,   6));
+				AddConstraint(NSLayoutConstraint.Create(TextInputView, NSLayoutAttribute.Bottom,   NSLayoutRelation.Equal, this, NSLayoutAttribute.Bottom,   1,  -5));
+				AddConstraint(NSLayoutConstraint.Create(TextInputView, NSLayoutAttribute.Trailing, NSLayoutRelation.Equal, this, NSLayoutAttribute.Trailing, 1, -21));
+
+				AddConstraint(NSLayoutConstraint.Create(SendButton, NSLayoutAttribute.Bottom,  NSLayoutRelation.Equal, TextInputView, NSLayoutAttribute.Bottom, 1, -6));
+				AddConstraint(NSLayoutConstraint.Create(SendButton, NSLayoutAttribute.Trailing,  NSLayoutRelation.Equal, TextInputView, NSLayoutAttribute.Trailing, 1, -8));
 
 				AddConstraint(NSLayoutConstraint.Create(SeparatorLine, NSLayoutAttribute.Top, NSLayoutRelation.Equal, this, NSLayoutAttribute.Top, 1, 0));
 				AddConstraint(NSLayoutConstraint.Create(SeparatorLine, NSLayoutAttribute.Leading, NSLayoutRelation.Equal, this, NSLayoutAttribute.Leading, 1, 0));
