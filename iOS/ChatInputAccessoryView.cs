@@ -241,15 +241,6 @@ namespace ChatListView.iOS
 							var text = TextInputView.Text;
 							if (SendMessageHandler != null)
 							{
-								UILocalNotification notification = new UILocalNotification();
-
-								notification.FireDate = NSDate.FromTimeIntervalSinceNow(20);
-								notification.AlertTitle = "Cerner Concierge";
-								notification.AlertAction = "View Alert";
-								notification.AlertBody = "You have a response to your inquiry.";
-								UIApplication.SharedApplication.ScheduleLocalNotification(notification);	
-
-
 								OnRaiseSendMessageEvent(new SendMessageEventArgs(text));
 							}
 
