@@ -1,5 +1,5 @@
-﻿using CC;
-using CC.iOS;
+﻿using ChatListView;
+using ChatListView.iOS;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -7,7 +7,7 @@ using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(NativeChatListView), 
                           typeof(NativeiOSChatListViewRenderer))]
 
-namespace CC.iOS
+namespace ChatListView.iOS
 {
 	public class NativeiOSChatListViewRenderer : ListViewRenderer
 	{

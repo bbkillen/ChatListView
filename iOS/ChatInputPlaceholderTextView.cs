@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
 
-namespace CC.iOS.Controls
+namespace ChatListView.iOS.Controls
 {
 	public partial class ChatInputPlaceholderTextView : UITextView
 	{

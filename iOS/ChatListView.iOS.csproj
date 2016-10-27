@@ -129,6 +129,14 @@
     <Compile Include="ChatInputPlaceholderTextView.cs" />
     <Compile Include="NativeiOSChatListViewRenderer.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\t_camera.png" />
+    <BundleResource Include="Resources\t_camera%402x.png" />
+    <BundleResource Include="Resources\t_camera%403x.png" />
+    <BundleResource Include="Resources\t_send.png" />
+    <BundleResource Include="Resources\t_send%402x.png" />
+    <BundleResource Include="Resources\t_send%403x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
 </Project>

@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using CoreGraphics;
 using Foundation;
 using UIKit;
-using CC.iOS.Controls;
+using ChatListView.iOS.Controls;
 
-namespace CC.iOS
+namespace ChatListView.iOS
 {
 	internal class ChatInputAccessoryView : UIView
 	{

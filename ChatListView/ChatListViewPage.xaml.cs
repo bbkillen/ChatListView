@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace ChatListView
 {
@@ -8,5 +10,18 @@ namespace ChatListView
 		{
 			InitializeComponent();
 		}
+
+		public Command<String> SendMessage
+		{
+			get
+			{
+				return new Command<String>((message) =>
+			   {
+			   });
+
+			}
+		}
+
+
 	}
 }

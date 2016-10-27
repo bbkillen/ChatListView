@@ -3,7 +3,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 
 
-namespace CC
+namespace ChatListView
 {
 	public class NativeChatListView : ListView
 	{
