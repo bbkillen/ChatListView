@@ -7,5 +7,5 @@ After a long span of product management and entrepreunrship I decided to dust of
  * iOS InputAccessoryView 
  * Xamarin Forms Behaviors 
 
-<img src="https://github.com/bbkillen/ChatListView/blob/master/example1.png" width="50%" height="50%" />
-<img src="https://github.com/bbkillen/ChatListView/blob/master/example1.png" width="50%" height="50%" />
+<img src="https://github.com/bbkillen/ChatListView/blob/master/example1.png" width="75%" height="75%" />
+<img src="https://github.com/bbkillen/ChatListView/blob/master/example1.png" width="75%" height="75%" />
