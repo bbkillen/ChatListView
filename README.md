@@ -8,4 +8,4 @@ After a long span of product management and entrepreunrship I decided to dust of
  * Xamarin Forms Behaviors 
 
 <img src="https://github.com/bbkillen/ChatListView/blob/master/example1.png" width="25%" height="25%" />
-<img src="https://github.com/bbkillen/ChatListView/blob/master/example1.png" width="25%" height="25%" />
+<img src="https://github.com/bbkillen/ChatListView/blob/master/example2.png" width="25%" height="25%" />
